@@ -1,6 +1,5 @@
 from decimal import Decimal
-from django.utils.dateutil import parser
-
+from django.utils.dateparse import parse_datetime
 from .models import Lead
 
 def handle_employee_assigner(data):
@@ -27,7 +26,7 @@ def handle_employee_assigner(data):
             total_value = Decimal('0.00')
         
         # Parse date_created
-        date_created = parser.parse(data.get('date_created'))
+        date_created = parse_datetime(data.get('date_created'))
         
         # Common fields for all records
         common_fields = {

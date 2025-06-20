@@ -25,7 +25,7 @@ class Lead(models.Model):
     ]
     
     # Contact Information
-    contact_id = models.CharField(max_length=50, unique=True)
+    contact_id = models.CharField(max_length=50)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     full_name = models.CharField(max_length=200)
@@ -45,7 +45,7 @@ class Lead(models.Model):
     timezone = models.CharField(max_length=50)
     
     # Opportunity Information
-    opportunity_id = models.CharField(max_length=50, unique=True)  # This is the 'id' field from payload
+    opportunity_id = models.CharField(max_length=50)  # This is the 'id' field from payload
     opportunity_name = models.CharField(max_length=200)
     status = models.CharField(max_length=20, default='open')
     lead_value = models.DecimalField(max_digits=10, decimal_places=2)
